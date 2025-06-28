@@ -28,7 +28,7 @@ def calculate_total_doses(json_path):
     return {name: f"{totals[name]} {units[name]}" for name in totals}
 
 if __name__ == "__main__":
-    json_file = "Journal 29 Apr 2025.json"  # 请根据实际路径修改
+    json_file = "Journal 27 May 2025.json"  # 请根据实际路径修改
     results = calculate_total_doses(json_file)
     for substance, total in results.items():
         print(f"{substance}: {total}")
