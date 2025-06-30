@@ -24,15 +24,15 @@ def measure_system_usage():
     global data
     while True:
         try:
-            # 使用 5 秒的 interval 测量 CPU 使用率
-            cpu_percent = psutil.cpu_times_percent(interval=5)
-            cpu_total_percent = 100 - cpu_percent.idle  # 计算总的 CPU 使用率
-            # 测量内存和磁盘使用率
+            while True:
+                cpu_percent = psutil.cpu_percent(interval=5)
+                if cpu_percent < 99.9:
+                    break
             ram_percent = psutil.virtual_memory().percent
             disk_percent = psutil.disk_usage("/").percent
             # 更新数据
             data.update({
-                "cpu_percent": round(cpu_total_percent, 2),  # 保留两位小数
+                "cpu_percent": cpu_percent,
                 "ram_percent": ram_percent,
                 "disk_percent": disk_percent,
                 "update_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
