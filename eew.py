@@ -52,18 +52,18 @@ if __name__ == '__main__':
             else:
                 auto_type = "自动"
             eqdistance = distance(float(cenc[f"No{i}"]["latitude"]), float(cenc[f"No{i}"]["longitude"]), current_lat, current_long)
-            print(f"[{i}] [{auto_type}] {cenc['No' + str(i)]['time']} {cenc['No' + str(i)]['location']} Ms{cenc['No' + str(i)]['magnitude']} 深度{cenc['No' + str(i)]['depth']}km 距离{eqdistance:.0f}km")
+            print(f"[{i}] [{auto_type}] {cenc['No' + str(i)]['time']} {cenc['No' + str(i)]['location']} M{cenc['No' + str(i)]['magnitude']} 深度{cenc['No' + str(i)]['depth']}km 距离{eqdistance:.0f}km")
         order = input()
         pga = float(input())
         eqdate = cenc[f"No{order}"]["time"]
         eqdate_str = eqdate[:4] + "/" + eqdate[5:7] + "/" + eqdate[8:10] + eqdate[10:16]    
         print()
-        print(f"{eqdate_str} {cenc[f'No{order}']['location']}Ms{cenc[f'No{order}']['magnitude']}地震观测 - 震度{calculate_shindo(pga)}【地震预警】")
+        print(f"{eqdate_str} {cenc[f'No{order}']['location']}M{cenc[f'No{order}']['magnitude']}地震观测 - 震度{calculate_shindo(pga)}【地震预警】")
         print()
         eqdate = cenc[f"No{order}"]["time"]
         eqdate_str = eqdate[:4] + "年" + eqdate[5:7] + "月" + eqdate[8:10] + "日" + eqdate[11:]
         eqdistance = distance(float(cenc[f"No{order}"]["latitude"]), float(cenc[f"No{order}"]["longitude"]), current_lat, current_long)
-        print(f"{cenc[f'No{order}']['location']}Ms{cenc[f'No{order}']['magnitude']} 震源深度{cenc[f'No{order}']['depth']}km")
+        print(f"{cenc[f'No{order}']['location']}M{cenc[f'No{order}']['magnitude']} 震源深度{cenc[f'No{order}']['depth']}km")
         print(f"发生于北京时间{eqdate_str}")
         print(f"本地观测点数据：最大加速度{pga}gal")
         # print(f"本地观测点数据：四川成都|距震中约{eqdistance:.0f}km|最大加速度{pga}gal")
