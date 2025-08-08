@@ -1,0 +1,12 @@
+colorama>=0.4.6
+Flask>=3.1.1
+flask_cors>=5.0.1
+matplotlib>=3.10.5
+numpy>=2.3.2
+obspy>=1.4.1
+opencv_python>=4.11.0.86
+psutil>=7.0.0
+pyserial>=3.5
+pystun3>=2.0.0
+python_vlc>=3.0.21203
+Requests>=2.32.4
